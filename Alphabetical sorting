@@ -1,0 +1,14 @@
+class Solution {
+    public String sortSentence(String sentence) {
+        String[] splitWords = sentence.split(" ");
+        String[] sortedWords = new String[splitWords.length];
+        
+        for (String word : splitWords) {
+            int position = word.charAt(word.length() - 1) - '1';
+            String actualWord = word.substring(0, word.length() - 1);
+            sortedWords[position] = actualWord;
+        }
+        
+        return String.join(" ", sortedWords);
+    }
+}
